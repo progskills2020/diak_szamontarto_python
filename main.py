@@ -1,29 +1,29 @@
 import student
+import classroom
+
+classroom1 = classroom.Classroom()
+
 
 run = True
-
-students = []
-
 while run:
-    input1 = input("""
-    Mit szeretne csinálni?
-    e-exit
-    dh-diák hozzáadása
-    dk-diákok kiíratása
-    """)
+    parancs = input("""
+Mit szeretne csinálni?
+e-exit
+dh-diák hozzáadása
+dk-diákok kiíratása
+""")
 
-    if input1 == "e":
+    if parancs == "e":
         print("A program leállt")
         run = False
-    elif input1 == "dh":
+    elif parancs == "dh":
         name1 = input("Mi legyen a diák neve?")
         age1 = input("Mi legyen a diák kora?")
-        student1 = student.Student(name1, age1)
-        students.append(student1)
-        print("A diák hozzáadva!")
-    elif input1 == "dk":
-        for student in range(len(students)):
-            students[student].output_data()
+        classroom1.add_new_student(name1, age1)
+        
+    elif parancs == "dk":
+        classroom1.write_out_students()
+        
         
 
 

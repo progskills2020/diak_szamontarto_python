@@ -8,7 +8,7 @@ class Student(human.Human):
     
     def add_grade(self, grade):
         self.grades.append(grade)
-        print("Jegy beírva!")
+        print(f"{self.name} nevű diáknak {grade} jegy lett beírva.")
 
     def calc_avg_grade(self):
         sum_of_grades = 0
